@@ -1,0 +1,109 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav {
+    flex-grow: 1;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav ul li {
+    margin: 0;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+header nav ul li a:hover {
+    background-color: #555;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+/* Estilos del menú desplegable en dispositivos móviles */
+@media (max-width: 768px) {
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 1;
+    }
+
+    header nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 1rem 0;
+    }
+
+    header nav ul.show {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 1.5rem;
+        margin-right: 20px;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    #menu-toggle:checked + label .menu-icon:before {
+        content: '\2715';
+    }
+}
+
+/* Estilos del hero */
+.hero {
+    background: url('hero-bg.jpg') no-repeat
